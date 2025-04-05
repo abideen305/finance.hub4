@@ -38,7 +38,7 @@ function App() {
         body: JSON.stringify(formData)
       });
       if (response.ok) {
-        alert('Thank you for joining the waitlist! We will contact you soon.');
+        alert('Thank you for registering for the financial bootcamp! We will contact you soon.');
         setFormData({
           parentName: '',
           childName: '',
@@ -79,7 +79,7 @@ function App() {
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="hover:text-primary transition">About</a>
               <a href="#features" className="hover:text-primary transition">Features</a>
-              <a href="#waitlist" className="hover:text-primary transition">Join Waitlist</a>
+              <a href="#waitlist" className="hover:text-primary transition">Register Now</a>
               <a href="#contact" className="hover:text-primary transition">Contact</a>
             </div>
           </nav>
@@ -90,13 +90,13 @@ function App() {
                 Empower Your Kids with Financial Literacy!
               </h1>
               <p className="text-lg mb-8">
-                Join our upcoming bootcamp designed for kids aged 8-14 to learn real-world money management in a fun and engaging way. This 5-day bootcamp will equip your children with essential skills for a financially responsible future.
+              Empower Your Kids with Financial Literacy!Register now for our Financial Literacy Bootcamp designed for kids aged 8-14.
               </p>
               <a 
                 href="#waitlist"
                 className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition"
               >
-                Join the Waitlist
+                Register Now
               </a>
             </div>
             <div className="hidden md:block">
@@ -246,111 +246,201 @@ function App() {
 
       {/* Waitlist Form Section */}
       <section id="waitlist" className="py-20 bg-white relative">
-        <div className="absolute inset-0 opacity-5 bg-cover bg-center" style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')`
-        }}></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8 text-secondary font-primary">
-              Join the Financial Literacy Bootcamp Waitlist
-            </h2>
-            <p className="text-center mb-8 text-gray-600">
-              Fill out the form below to secure your spot for your child in our upcoming bootcamp. Spaces are limited!
-            </p>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Parent/Guardian Name
-                </label>
-                <input
-                  type="text"
-                  name="parentName"
-                  value={formData.parentName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Child's Name
-                </label>
-                <input
-                  type="text"
-                  name="childName"
-                  value={formData.childName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Child's Age
-                  </label>
-                  <select
-                    name="childAge"
-                    value={formData.childAge}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  >
-                    {Array.from({ length: 7 }, (_, i) => i + 8).map(age => (
-                      <option key={age} value={age}>{age}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Preferred Session
-                  </label>
-                  <select
-                    name="session"
-                    value={formData.session}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  >
-                    <option value="morning">Morning</option>
-                    <option value="afternoon">Afternoon</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition"
-              >
-                Join Waitlist
-              </button>
-            </form>
+  <div
+    className="absolute inset-0 opacity-5 bg-cover bg-center"
+    style={{
+      backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')`
+    }}
+  ></div>
+  <div className="container mx-auto px-6 relative z-10">
+    <div className="max-w-2xl mx-auto">
+      <h2 className="text-3xl font-bold text-center mb-8 text-secondary font-primary">
+        Register for the Financial Literacy Bootcamp
+      </h2>
+      <p className="text-center mb-8 text-gray-600">
+        Fill out the form below to secure your spot for your child in our upcoming bootcamp. Spaces are limited!
+      </p>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Parent Name */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Parent/Guardian Name
+          </label>
+          <input
+            type="text"
+            name="parentName"
+            value={formData.parentName}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+        </div>
+
+        {/* Child Name */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Child's Name
+          </label>
+          <input
+            type="text"
+            name="childName"
+            value={formData.childName}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+        </div>
+
+        {/* Age and State */}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Child's Age
+            </label>
+            <select
+              name="childAge"
+              value={formData.childAge}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+            >
+              {Array.from({ length: 7 }, (_, i) => i + 8).map(age => (
+                <option key={age} value={age}>{age}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              State
+            </label>
+            <input
+              type="text"
+              name="state"
+              value={formData.state}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
           </div>
         </div>
-      </section>
+
+        {/* LGA */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Local Government Area (LGA)
+          </label>
+          <input
+            type="text"
+            name="lga"
+            value={formData.lga}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+        </div>
+
+        {/* Contact Time Picker */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            What date & time can our representative reach out to you?
+          </label>
+          <input
+            type="datetime-local"
+            name="contactDateTime"
+            value={formData.contactDateTime}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+        </div>
+
+        {/* How did you hear about us? */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            How did you hear about this program?
+          </label>
+          <select
+            name="referralSource"
+            value={formData.referralSource}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          >
+            <option value="">Select an option</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+            <option value="friends">Friends</option>
+            <option value="google">Google Search</option>
+          </select>
+        </div>
+
+        {/* Has Paid */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Have you paid for the BootCamp?
+          </label>
+          <div className="flex gap-4">
+            {['Yes', 'No'].map(option => (
+              <label key={option} className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="hasPaid"
+                  value={option.toLowerCase()}
+                  checked={formData.hasPaid === option.toLowerCase()}
+                  onChange={handleChange}
+                  required
+                />
+                <span>{option}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Email */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Email Address
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+        </div>
+
+        {/* Phone */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
@@ -420,10 +510,13 @@ function App() {
             </div>
           </div>
         </div>
+        {/* <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} HUB 4. All rights reserved.
+          </p> */}
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0a0530] text-white py-8">
+      {/* <footer className="bg-[#0a0530] text-white py-8">
         <div className="container mx-auto px-6 text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <img 
@@ -432,11 +525,9 @@ function App() {
               className="h-8"
             />
           </div>
-          <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} HUB 4. All rights reserved.
-          </p>
+          
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
